@@ -2,14 +2,14 @@ from django.shortcuts import render
 
 def home(request):
     ProductsList = [
-        {'id': 1, 'name': "IPhone", 'img': "https://images.unsplash.com/photo-1726574686436-5ef90358e032?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXBob25lJTIwMTN8ZW58MHx8MHx8fDA%3D"},
+        {'id': 1, 'name': "IPhone", 'img': "https://images.unsplash.com/photo-1726574686436-5ef90358e032?fm=jpg&q=60&w=3000&auto=format&fit=crop"},
         {'id': 2, 'name': 'Samsung', 'img': "https://images.samsung.com/is/image/samsung/p6pim/in/s2602/gallery/in-galaxy-s26-ultra-s948-sm-s948bzvbins-thumb-550793679"},
-        {'id': 3, 'name': 'VIVO', 'img': 'https://images.unsplash.com/photo-1755318535396-cdb062dc60bd?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dml2byUyMHNtYXJ0cGhvbmV8ZW58MHx8MHx8fDA%3D'},
-        {'id': 4, 'name': 'Realme', 'img': 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300'},
-        {'id': 5, 'name': 'OnePlus', 'img': 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300'},
-        {'id': 6, 'name': 'Xiaomi', 'img': 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300'},
-        {'id': 7, 'name': 'Google Pixel', 'img': 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300'},
-        {'id': 8, 'name': 'Motorola', 'img': 'https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=300'}
+        {'id': 3, 'name': 'VIVO', 'img': 'https://images.unsplash.com/photo-1755318535396-cdb062dc60bd?fm=jpg&q=60&w=3000&auto=format&fit=crop'},
+        {'id': 4, 'name': 'Realme', 'img': 'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400'},
+        {'id': 5, 'name': 'OnePlus', 'img': 'https://images.unsplash.com/photo-1620283085439-39620a1e21c4?w=400'},
+        {'id': 6, 'name': 'Xiaomi', 'img': 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=400'},
+        {'id': 7, 'name': 'Google Pixel', 'img': 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400'},
+        {'id': 8, 'name': 'Motorola', 'img': 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400'}
     ]
     return render(request, 'products/index.html', {'ProductsList': ProductsList})
 
