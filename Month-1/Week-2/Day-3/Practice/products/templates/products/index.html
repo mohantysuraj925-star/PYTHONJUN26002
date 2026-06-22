@@ -1,0 +1,15 @@
+<html>
+<body>
+    <h1>My Home Directory</h1>
+    {% for product in ProductsList %}
+        <div style="margin-bottom: 30px;">
+            <h3>{{ forloop.counter }}. {{ product.name }}</h3>
+            <img src="{{ product.img }}" width="200" alt="{{ product.name }}">
+            <br><br>
+            <a href="/product/{{ product.id }}/">
+                <button type="button">View More</button>
+            </a>
+        </div>
+    {% endfor %}
+</body>
+</html>
