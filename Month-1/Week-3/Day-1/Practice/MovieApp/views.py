@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-def home(request):
-    return render(request, "home/index.html")
+def index(request):
+    return redirect('add_movie')
 
-def add(request):
-    return render(request, "add/index.html")
+def add_movie(request):
+    # Aapka jo dynamic form aur premium layout ka code tha, wo iske neeche chalega
