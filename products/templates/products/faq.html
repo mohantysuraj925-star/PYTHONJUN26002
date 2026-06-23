@@ -1,0 +1,11 @@
+<html>
+<body>
+    <h1>Frequently Asked Questions</h1>
+    {% for item in faqs %}
+        <div>
+            <h3>Q: {{ item.question }}</h3>
+            <p>A: {{ item.answer }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
