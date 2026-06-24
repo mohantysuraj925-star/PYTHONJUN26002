@@ -1,18 +1,9 @@
-"""
-WSGI config for SuraajCore project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
-"""
-
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SuraajCore.settings')
+# Render ke liye absolute path set kar rahe hain
+sys.path.append('/opt/render/project/src/Month-1/Week-3/Day-2/Practice')
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SuraajCore.settings')
 application = get_wsgi_application()
