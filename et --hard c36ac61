@@ -1,0 +1,51 @@
+[33md32258f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: Branch: renamed refs/heads/clean_history to refs/heads/main
+[33md32258f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: commit (initial): Day-2: Django REST API setup with Postman integration
+[33m78d11e3[m HEAD@{3}: Branch: renamed refs/heads/temp_branch to refs/heads/main
+[33m78d11e3[m HEAD@{5}: commit (initial): Day-2: Django REST API complete - Professional Setup
+[33m81bdcdb[m HEAD@{6}: commit: Revert: Restored repository to previous stable state
+[33meafec24[m HEAD@{7}: commit: Restore: Added back .gitignore to maintain project structure
+[33m62c5924[m HEAD@{8}: commit: Cleanup: Removed .gitignore file from root
+[33ma6c9e00[m HEAD@{9}: commit: Cleanup: Removed unnecessary files from git tracking
+[33mc36ac61[m HEAD@{10}: commit: Final professional API setup with comments
+[33mcc57d12[m HEAD@{11}: commit: Day-2: Django REST API complete with POSTMAN testing
+[33meb48704[m HEAD@{12}: commit: fix: map view render to correct template path add/index.html
+[33mb7c5297[m HEAD@{13}: commit: fix: resolve IndentationError by adding proper render response
+[33mdbc5978[m HEAD@{14}: commit: fix: align URL routing pattern directly to views.add endpoint
+[33mf8b1cba[m HEAD@{15}: commit: fix: enforce hard permanent redirect from root URL to dynamic add form view
+[33m83f6a6c[m HEAD@{16}: commit: fix: route main URL directly to MovieApp without slash add
+[33me586656[m HEAD@{17}: commit: refactor: permanently remove root-level projects and update environment gitignore
+[33m16b1964[m HEAD@{18}: commit: chore: configure root URL routing to default directly to the MovieApp dashboard
+[33m9cb21ec[m HEAD@{19}: commit: refactor: clear redundant project directories from repository root
+[33m6290694[m HEAD@{20}: commit: refactor: relocate core application components from week-2 day-4 to week-2 day-3 practice directory
+[33m3138fb9[m HEAD@{21}: commit: refactor: successfully relocate core application modules directly into the week-2 day-3 practice directory
+[33mefc37dc[m HEAD@{22}: commit: feat: implement inline movie management layout with responsive dark inputs and live data deletion
+[33m3b1e957[m HEAD@{23}: commit: fix: explicit row layout and white background setup
+[33m1365ae6[m HEAD@{24}: commit: chore: add gunicorn to requirements
+[33ma9e96d7[m HEAD@{25}: commit: chore: add requirements.txt for render deployment
+[33m7213f40[m HEAD@{26}: commit: feat: implement product numbering and standard view more actions in practice project
+[33m11408f4[m HEAD@{27}: commit: feat: complete day 3 assignment tasks and resolve asset rendering issues
+[33m571a841[m HEAD@{28}: commit: feat: complete day 3 assignment tasks and resolve asset rendering issues
+[33me407233[m HEAD@{29}: commit: feat: complete day 3 assignment tasks and resolve asset rendering issues
+[33m9d9ef7d[m HEAD@{30}: commit: clean: Day 3 Complete Assignments Upload
+[33m9e38fb2[m HEAD@{31}: commit: Day-3: My Home Directory project
+[33ma88e4a1[m HEAD@{32}: commit: clean: remove accidental day 1 duplicate files from day 2 folder
+[33mb16bb87[m HEAD@{33}: commit: feat: complete day 2 assignments with fresh django setup
+[33m65cf3bf[m HEAD@{34}: commit: feat: setup django server and successfully verified API status 200 on Mini Postman
+[33m094ff5e[m HEAD@{35}: commit: fix: successfully restored original practice code and kept new assignment tasks
+[33m4dcf4e4[m HEAD@{36}: commit: feat: finalize precise Day 1 assignment with exactly 13 coading tasks
+[33m0e19281[m HEAD@{37}: commit: feat: sync day 1 OOPs assignment across Practice and Assignments directories
+[33m5bda904[m HEAD@{38}: commit (amend): Refactor Citizen class initialization data with updated placeholder details
+[33m04a3af3[m HEAD@{39}: commit: updated code with suraj name in citizen class
+[33m00cc5ad[m HEAD@{40}: commit (amend): Completed Python Day 5 practice problems and concepts verification
+[33m782bc5d[m HEAD@{41}: commit (amend): Completed Python Day 5 assignments including all tasks and bonus questions
+[33m925a1df[m HEAD@{42}: reset: moving to origin/main
+[33m925a1df[m HEAD@{43}: commit (amend): Completed Python Day 5 practice problems and concepts verification
+[33mf2563f7[m HEAD@{44}: commit (amend): Completed Python Day 5 Day-5 assignments including all tasks and bonus questions
+[33m84b19e9[m HEAD@{45}: commit: added organized day 5 practice code with suraj name
+[33m64f397b[m HEAD@{46}: commit: completed all 35 assignments and bonus tasks for day 5
+[33m43d20ab[m HEAD@{47}: commit: completed and organized day 4 practice notes code without comments
+[33ma4e7294[m HEAD@{48}: commit: completed day 4 functions assignment without comments
+[33m4ae01cd[m HEAD@{49}: commit: updated index.py in day 3 practice
+[33ma5ca6e8[m HEAD@{50}: commit: completed python day 2 arithmetic and comparison operators assignments
+[33m0522303[m HEAD@{51}: commit: completed python day 3 while loop assignments
+[33mdc75103[m HEAD@{52}: clone: from https://github.com/mohantysuraj925-star/PYTHONJUN26002.git
