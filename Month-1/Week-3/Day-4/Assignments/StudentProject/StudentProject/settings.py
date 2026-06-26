@@ -1,12 +1,8 @@
-import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-SECRET_KEY = 'django-insecure-production-master-key-fix'
-
+SECRET_KEY = 'django-insecure-production-final-safe-key'
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -16,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'StudentProject',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -56,11 +52,4 @@ DATABASES = {
     }
 }
 
-AUTH_PASSWORD_VALIDATORS = []
-
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
-USE_I18N = True
-USE_TZ = True
-STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
