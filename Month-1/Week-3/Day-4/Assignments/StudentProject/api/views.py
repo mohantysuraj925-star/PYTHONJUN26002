@@ -27,7 +27,9 @@ def student_list_or_create(request):
                 "course": student.course
             })
 
-        host = request.build_absolute_uri('/api/students/')
+        # Base URL domain extraction for home page formatting
+        host = request.build_absolute_uri('/')
+        
         next_page = f"{host}?page={page_obj.next_page_number()}" if page_obj.has_next() else None
         previous_page = f"{host}?page={page_obj.previous_page_number()}" if page_obj.has_previous() else None
 
