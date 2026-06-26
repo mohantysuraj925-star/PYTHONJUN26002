@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-production-master-key-fix'
+SECRET_KEY = 'django-insecure-live-final-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -26,23 +26,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'StudentProject.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
 WSGI_APPLICATION = 'StudentProject.wsgi:application'
 
 DATABASES = {
@@ -52,7 +35,6 @@ DATABASES = {
     }
 }
 
-AUTH_PASSWORD_VALIDATORS = []
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
