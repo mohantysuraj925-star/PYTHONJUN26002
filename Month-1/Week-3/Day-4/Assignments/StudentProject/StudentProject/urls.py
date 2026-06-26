@@ -1,8 +1,10 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Direct main root par views mapping pass karna
-    path('', include('urls')), 
+    path('', views.student_list_or_create, name='student_list_or_create'),
+    path('api/students/', views.student_list_or_create, name='student_list_or_create'),
+    path('api/students/<int:pk>/', views.student_detail, name='student_detail'),
 ]
