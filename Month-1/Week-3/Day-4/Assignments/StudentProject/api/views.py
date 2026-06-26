@@ -27,7 +27,7 @@ def student_list_or_create(request):
                 "course": student.course
             })
 
-        # Base URL domain extraction for home page formatting
+        # Base URL domain extraction for clean root URL format
         host = request.build_absolute_uri('/')
         
         next_page = f"{host}?page={page_obj.next_page_number()}" if page_obj.has_next() else None
