@@ -6,6 +6,9 @@ from .models import Student
 
 @csrf_exempt
 def student_list_or_create(request):
+    """
+    API endpoint to list students with pagination (GET) or create a new student (POST).
+    """
     if request.method == 'GET':
         students_query = Student.objects.all().order_by('id')
         total_count = students_query.count()
@@ -25,13 +28,21 @@ def student_list_or_create(request):
             data = json.loads(request.body)
             student = Student.objects.create(name=data.get('name'), email=data.get('email'), phone=data.get('phone'), course=data.get('course'))
             return JsonResponse({"id": student.id, "name": student.name, "email": student.email, "phone": student.phone, "course": student.course}, status=201)
-        except Exception as e: return JsonResponse({"error": str(e)}, status=400)
+        except Exception as e: 
+            return JsonResponse({"error": str(e)}, status=400)
 
 @csrf_exempt
 def student_detail(request, pk):
-    try: student = Student.objects.get(pk=pk)
-    except Student.DoesNotExist: return JsonResponse({"error": "Student not found"}, status=404)
-    if request.method == 'GET': return JsonResponse({"id": student.id, "name": student.name, "email": student.email, "phone": student.phone, "course": student.course})
+    """
+    API endpoint to retrieve, update, or delete a specific student instance by ID.
+    """
+    try: 
+        student = Student.objects.get(pk=pk)
+    except Student.DoesNotExist: 
+        return JsonResponse({"error": "Student record not found"}, status=404)
+        
+    if request.method == 'GET': 
+        return JsonResponse({"id": student.id, "name": student.name, "email": student.email, "phone": student.phone, "course": student.course})
     elif request.method == 'PUT':
         try:
             data = json.loads(request.body)
@@ -41,7 +52,8 @@ def student_detail(request, pk):
             student.course = data.get('course', student.course)
             student.save()
             return JsonResponse({"id": student.id, "name": student.name, "email": student.email, "phone": student.phone, "course": student.course})
-        except Exception as e: return JsonResponse({"error": str(e)}, status=400)
+        except Exception as e: 
+            return JsonResponse({"error": str(e)}, status=400)
     elif request.method == 'DELETE':
         student.delete()
-        return JsonResponse({"message": "Student deleted successfully"}, status=200)
+        return JsonResponse({"message": "Student record deleted successfully"}, status=200)
