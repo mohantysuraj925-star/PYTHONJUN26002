@@ -1,8 +1,26 @@
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import authenticate
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Student
+
+def home_index(request):
+    return JsonResponse({
+        "status": "Running",
+        "message": "StudentProject Token Authentication System is fully active on root page.",
+        "endpoints": {
+            "user_registration": "/api/register/",
+            "user_login": "/api/login/",
+            "user_profile": "/api/profile/",
+            "students_pagination_list": "/api/students/"
+        }
+    })
 
 @csrf_exempt
 def student_list_or_create(request):
@@ -27,9 +45,7 @@ def student_list_or_create(request):
                 "course": student.course
             })
 
-        # Base URL domain extraction for clean root URL format
         host = request.build_absolute_uri('/')
-        
         next_page = f"{host}?page={page_obj.next_page_number()}" if page_obj.has_next() else None
         previous_page = f"{host}?page={page_obj.previous_page_number()}" if page_obj.has_previous() else None
 
@@ -96,3 +112,63 @@ def student_detail(request, pk):
     elif request.method == 'DELETE':
         student.delete()
         return JsonResponse({"message": "Student deleted successfully"}, status=200)
+
+# --- DAY-5 ENDPOINTS ---
+
+@csrf_exempt
+@api_view(['POST'])
+def user_register(request):
+    try:
+        data = request.data
+        username = data.get('username')
+        password = data.get('password')
+        email = data.get('email', '')
+
+        if not username or not password:
+            return JsonResponse({"error": "Username and password are required"}, status=400)
+
+        if User.objects.filter(username=username).exists():
+            return JsonResponse({"error": "Username already exists"}, status=400)
+
+        user = User.objects.create_user(username=username, password=password, email=email)
+        token, _ = Token.objects.get_or_create(user=user)
+
+        return JsonResponse({
+            "message": "User registered successfully",
+            "username": user.username,
+            "token": token.key
+        }, status=201)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=400)
+
+@csrf_exempt
+@api_view(['POST'])
+def user_login(request):
+    try:
+        data = request.data
+        username = data.get('username')
+        password = data.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            token, _ = Token.objects.get_or_create(user=user)
+            return JsonResponse({
+                "message": "Login successful",
+                "username": user.username,
+                "token": token.key
+            }, status=200)
+        else:
+            return JsonResponse({"error": "Invalid credentials"}, status=401)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=400)
+
+@api_view(['GET'])
+@authentication_classes([TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def user_profile(request):
+    return JsonResponse({
+        "username": request.user.username,
+        "email": request.user.email,
+        "date_joined": request.user.date_joined
+    }, status=200)
