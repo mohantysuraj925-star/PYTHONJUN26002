@@ -1,7 +1,8 @@
+import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-day5-auth-production-safe-key'
+SECRET_KEY = 'django-insecure-day5-auth-key'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -33,4 +34,3 @@ DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DI
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],
 }
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
