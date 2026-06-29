@@ -11,6 +11,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Student
 
 def home_index(request):
+    """
+    Returns the root API engine configuration roadmap and deployment confirmation.
+    """
     return JsonResponse({
         "status": "Running",
         "message": "StudentProject Token Authentication System is fully active on root page.",
@@ -24,6 +27,9 @@ def home_index(request):
 
 @csrf_exempt
 def student_list_or_create(request):
+    """
+    Handles student collection queries with pagination controls or creates new entities.
+    """
     if request.method == 'GET':
         students_query = Student.objects.all().order_by('id')
         total_count = students_query.count()
@@ -77,6 +83,9 @@ def student_list_or_create(request):
 
 @csrf_exempt
 def student_detail(request, pk):
+    """
+    Manages operational states on single records including data modifications and deletions.
+    """
     try:
         student = Student.objects.get(pk=pk)
     except Student.DoesNotExist:
@@ -113,11 +122,12 @@ def student_detail(request, pk):
         student.delete()
         return JsonResponse({"message": "Student deleted successfully"}, status=200)
 
-# --- DAY-5 ENDPOINTS ---
-
 @csrf_exempt
 @api_view(['POST'])
 def user_register(request):
+    """
+    Registers a new unique workspace security profile user account.
+    """
     try:
         data = request.data
         username = data.get('username')
@@ -144,6 +154,9 @@ def user_register(request):
 @csrf_exempt
 @api_view(['POST'])
 def user_login(request):
+    """
+    Verifies user identities and signs valid profiles a secure access token.
+    """
     try:
         data = request.data
         username = data.get('username')
@@ -167,6 +180,9 @@ def user_login(request):
 @authentication_classes([TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def user_profile(request):
+    """
+    Secures and retrieves internal telemetry attributes from verified profiles.
+    """
     return JsonResponse({
         "username": request.user.username,
         "email": request.user.email,
