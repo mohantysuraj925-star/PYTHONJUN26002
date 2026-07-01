@@ -1,0 +1,11 @@
+.my-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: blue;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.my-text:hover {
+  color: green;
+}
