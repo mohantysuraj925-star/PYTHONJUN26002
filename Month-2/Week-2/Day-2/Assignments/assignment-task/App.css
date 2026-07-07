@@ -1,0 +1,12 @@
+#root {
+  text-align: left;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0;
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
